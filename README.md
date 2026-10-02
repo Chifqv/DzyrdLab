@@ -1,4 +1,4 @@
-# Digital Ossetian Heritage Archive
+# Digital Ossetian Heritage Archive "DzyrdLab"
 
 ## Цифровой архив осетинского культурного и исторического наследия.
 
