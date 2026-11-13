@@ -1,440 +1,299 @@
 ﻿@{
-    ViewData["Title"] = "Catalog";
+    ViewData["Title"] = "Каталог материалов";
 }
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Каталог материалов — DzyrdLab</title>
-  <meta name="description" content="Каталог методических материалов по осетинскому языку: уроки, рабочие листы, презентации и игры. Фильтруйте по классу, теме и типу, сохраняйте нужное в личную подборку.">
-  <meta name="theme-color" content="#f3efe5">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%23792e29'/%3E%3Cpath d='M20 8 32 20 20 32 8 20Z' fill='none' stroke='%23d9d4c8' stroke-width='1.5'/%3E%3Cpath d='M20 14 26 20 20 26 14 20Z' fill='%23d9d4c8'/%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,300..700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="pages.css"> 
-</head>
-<body>
-    <a class="skip-link" href="#main">Перейти к содержанию</a>
 
-    <svg class="svg-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.7-3.7" /></symbol>
-        <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15" /><path d="m13 6 6 6-6 6" /></symbol>
-        <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7" /><path d="M8 7h9v9" /></symbol>
-        <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12" /><path d="m7 10 5 5 5-5" /><path d="M5 21h14" /></symbol>
-        <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11" /></symbol>
-        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3Z" /><path d="m9 12 2 2 4-4" /></symbol>
-        <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 4h12v17l-6-4.2L6 21V4Z" /></symbol>
-        <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 21V9" /><path d="m7 14 5-5 5 5" /><path d="M5 3h14" /></symbol>
-        <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6.5C10 5 7.5 4.5 4 5v13c3.5-.5 6 0 8 1.5 2-1.5 4.5-2 8-1.5V5c-3.5-.5-6 0-8 1.5Z" /><path d="M12 6.5v13" /></symbol>
-        <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" /><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" /><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6" /><path d="M18 14.5c2.2.8 3.5 2.8 3.5 5.5" /></symbol>
-        <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8L12 3Z" /><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z" /></symbol>
-        <symbol id="i-pencil" viewBox="0 0 24 24"><path d="m4 20 4.5-1L20 7.5 16.5 4 5 15.5 4 20Z" /><path d="m14 6 4 4" /></symbol>
-        <symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9 10-4 10 4-10 4L2 9Z" /><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5" /><path d="M22 9v6" /></symbol>
-        <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" /><circle cx="12" cy="12" r="3" /></symbol>
-        <symbol id="i-badge-check" viewBox="0 0 24 24"><path d="m12 3 2.2 2.1 3-.1.4 3 2.4 1.8-1.4 2.7 1.4 2.7-2.4 1.8-.4 3-3-.1L12 21l-2.2-2.1-3 .1-.4-3-2.4-1.8L5.4 12 4 9.3l2.4-1.8.4-3 3 .1L12 3Z" /><path d="m9 12 2 2 4-4" /></symbol>
-        <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6V3Z" /><path d="M14 3v5h5" /><path d="M9 13h6M9 17h4" /></symbol>
-        <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
-        <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.8 6.2.9-4.5 4.4 1.1 6.3L12 17.5 6.4 20.4l1.1-6.3L3 9.7l6.2-.9L12 3Z" /></symbol>
-        <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="m4 7 8 6 8-6" /></symbol>
-        <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" /></symbol>
-        <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 7h16M7 12h10M10 17h4" /></symbol>
-    </svg>
-
-    <header class="site-header" id="site-header">
-        <div class="shell header-inner">
-            <a class="brand" href="index.html">
-                <span class="brand-mark" aria-hidden="true">
-                    <svg viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="#792e29" /><path d="M20 8 32 20 20 32 8 20Z" fill="none" stroke="#d9d4c8" stroke-width="1.4" /><path d="M20 14 26 20 20 26 14 20Z" fill="#d9d4c8" /></svg>
-                </span>
-                <span class="brand-text">
-                    <strong>DzyrdLab</strong>
-                    <small>методическая библиотека</small>
-                </span>
-            </a>
-
-            <nav class="nav" id="primary-nav" aria-label="Основная навигация">
-                <a href="catalog.html" aria-current="page">Методики</a>
-                <a href="index.html#classes">Классы</a>
-                <a href="index.html#authors">Авторы</a>
-                <a href="index.html#about">О проекте</a>
-                <div class="nav-extra">
-                    <a href="login.html" data-auth-link>Войти</a>
-                    <a class="btn btn-primary" href="profile.html#uploads">Опубликовать материал</a>
-                </div>
+<section class="catalog-hero" id="top">
+    <div class="shell catalog-hero-grid">
+        <div>
+            <nav class="breadcrumb" aria-label="Хлебные крошки">
+                <a asp-controller="Home" asp-action="Index">Главная</a>
+                <span class="breadcrumb-sep" aria-hidden="true">/</span>
+                <span aria-current="page">Каталог</span>
             </nav>
 
-            <div class="header-actions">
-                <button class="icon-btn" type="button" id="header-search" aria-label="Перейти к поиску">
-                    <svg class="icon" aria-hidden="true"><use href="#i-search" /></svg>
-                </button>
-                <a class="btn btn-ghost header-login" href="login.html" data-auth-link>Войти</a>
-                <a class="btn btn-primary header-publish" href="profile.html#uploads">
-                    <span>Опубликовать</span>
-                    <svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg>
-                </a>
-                <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="primary-nav">
-                    <span></span><span></span><span></span>
-                </button>
+            <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Библиотека · <span lang="os">Ирон æвзаг</span></p>
+            <h1>Все материалы <span>библиотеки</span></h1>
+            <p class="catalog-hero-lead">Уроки, рабочие листы, презентации и игры от педагогов Осетии. Фильтруйте по классу, теме и типу — и сохраняйте нужное в личную подборку.</p>
+
+            <form class="search" id="catalog-search" role="search" novalidate>
+                <svg class="icon search-icon" aria-hidden="true"><use href="#i-search" /></svg>
+                <label class="sr-only" for="catalog-search-input">Поиск по каталогу материалов</label>
+                <input id="catalog-search-input" name="q" type="search" placeholder="Тема, класс, автор или слово в материале…" autocomplete="off">
+                <button class="btn btn-search" type="submit">Найти</button>
+            </form>
+
+            <div class="catalog-quick" aria-label="Быстрый подбор материалов">
+                <span class="quick-label">Быстрый выбор:</span>
+                <button class="chip" type="button" data-quick="verified">Только проверенные</button>
+                <button class="chip" type="button" data-quick="grade" data-value="preschool">Дошкольникам</button>
+                <button class="chip" type="button" data-quick="type" data-value="worksheet">Рабочие листы</button>
+                <button class="chip" type="button" data-quick="query" data-value="Нартский эпос">Нартский эпос</button>
             </div>
         </div>
-    </header>
 
-    <main id="main">
-        <section class="catalog-hero" id="top">
-            <div class="shell catalog-hero-grid">
+        <aside class="catalog-index" aria-label="Разделы каталога">
+            <div class="catalog-index-head">
+                <h2>В библиотеке</h2>
+                <span>18 материалов</span>
+            </div>
+            <div class="catalog-index-list">
+                <button class="catalog-index-row is-active" type="button" data-index-type="all">
+                    <span class="index-dot" aria-hidden="true"></span>
+                    <span class="index-name">Все материалы</span>
+                    <span class="index-count">18</span>
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+                </button>
+                <button class="catalog-index-row" type="button" data-index-type="lesson">
+                    <span class="index-dot" aria-hidden="true"></span>
+                    <span class="index-name">Уроки и конспекты</span>
+                    <span class="index-count" data-count-type="lesson">5</span>
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+                </button>
+                <button class="catalog-index-row" type="button" data-index-type="worksheet">
+                    <span class="index-dot" aria-hidden="true"></span>
+                    <span class="index-name">Рабочие листы</span>
+                    <span class="index-count" data-count-type="worksheet">5</span>
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+                </button>
+                <button class="catalog-index-row" type="button" data-index-type="presentation">
+                    <span class="index-dot" aria-hidden="true"></span>
+                    <span class="index-name">Презентации</span>
+                    <span class="index-count" data-count-type="presentation">4</span>
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+                </button>
+                <button class="catalog-index-row" type="button" data-index-type="game">
+                    <span class="index-dot" aria-hidden="true"></span>
+                    <span class="index-name">Игры и викторины</span>
+                    <span class="index-count" data-count-type="game">4</span>
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+                </button>
+            </div>
+            <div class="catalog-index-foot">
+                <span><strong>6</strong> авторов</span>
+                <span>обновлено сегодня</span>
+            </div>
+        </aside>
+    </div>
+</section>
+
+<section class="catalog-section" id="materials">
+    <div class="shell catalog-layout">
+        <aside class="catalog-sidebar" id="catalog-filters" aria-label="Фильтры каталога">
+            <div class="filters-head">
                 <div>
-                    <nav class="breadcrumb" aria-label="Хлебные крошки">
-                        <a href="index.html">Главная</a>
-                        <span class="breadcrumb-sep" aria-hidden="true">/</span>
-                        <span aria-current="page">Каталог</span>
-                    </nav>
-
-                    <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Библиотека · <span lang="os">Ирон æвзаг</span></p>
-                    <h1>Все материалы <span>библиотеки</span></h1>
-                    <p class="catalog-hero-lead">Уроки, рабочие листы, презентации и игры от педагогов Осетии. Фильтруйте по классу, теме и типу — и сохраняйте нужное в личную подборку.</p>
-
-                    <form class="search" id="catalog-search" role="search" novalidate>
-                        <svg class="icon search-icon" aria-hidden="true"><use href="#i-search" /></svg>
-                        <label class="sr-only" for="catalog-search-input">Поиск по каталогу материалов</label>
-                        <input id="catalog-search-input" name="q" type="search" placeholder="Тема, класс, автор или слово в материале…" autocomplete="off">
-                        <button class="btn btn-search" type="submit">Найти</button>
-                    </form>
-
-                    <div class="catalog-quick" aria-label="Быстрый подбор материалов">
-                        <span class="quick-label">Быстрый выбор:</span>
-                        <button class="chip" type="button" data-quick="verified">Только проверенные</button>
-                        <button class="chip" type="button" data-quick="grade" data-value="preschool">Дошкольникам</button>
-                        <button class="chip" type="button" data-quick="type" data-value="worksheet">Рабочие листы</button>
-                        <button class="chip" type="button" data-quick="query" data-value="Нартский эпос">Нартский эпос</button>
-                    </div>
+                    <p class="filters-kicker">Подбор</p>
+                    <h2>Фильтры</h2>
                 </div>
-
-                <aside class="catalog-index" aria-label="Разделы каталога">
-                    <div class="catalog-index-head">
-                        <h2>В библиотеке</h2>
-                        <span>18 материалов</span>
-                    </div>
-                    <div class="catalog-index-list">
-                        <button class="catalog-index-row is-active" type="button" data-index-type="all">
-                            <span class="index-dot" aria-hidden="true"></span>
-                            <span class="index-name">Все материалы</span>
-                            <span class="index-count">18</span>
-                            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
-                        </button>
-                        <button class="catalog-index-row" type="button" data-index-type="lesson">
-                            <span class="index-dot" aria-hidden="true"></span>
-                            <span class="index-name">Уроки и конспекты</span>
-                            <span class="index-count" data-count-type="lesson">5</span>
-                            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
-                        </button>
-                        <button class="catalog-index-row" type="button" data-index-type="worksheet">
-                            <span class="index-dot" aria-hidden="true"></span>
-                            <span class="index-name">Рабочие листы</span>
-                            <span class="index-count" data-count-type="worksheet">5</span>
-                            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
-                        </button>
-                        <button class="catalog-index-row" type="button" data-index-type="presentation">
-                            <span class="index-dot" aria-hidden="true"></span>
-                            <span class="index-name">Презентации</span>
-                            <span class="index-count" data-count-type="presentation">4</span>
-                            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
-                        </button>
-                        <button class="catalog-index-row" type="button" data-index-type="game">
-                            <span class="index-dot" aria-hidden="true"></span>
-                            <span class="index-name">Игры и викторины</span>
-                            <span class="index-count" data-count-type="game">4</span>
-                            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
-                        </button>
-                    </div>
-                    <div class="catalog-index-foot">
-                        <span><strong>6</strong> авторов</span>
-                        <span>обновлено сегодня</span>
-                    </div>
-                </aside>
-            </div>
-        </section>
-
-        <section class="catalog-section" id="materials">
-            <div class="shell catalog-layout">
-                <aside class="catalog-sidebar" id="catalog-filters" aria-label="Фильтры каталога">
-                    <div class="filters-head">
-                        <div>
-                            <p class="filters-kicker">Подбор</p>
-                            <h2>Фильтры</h2>
-                        </div>
-                        <div class="filters-head-actions">
-                            <button class="filters-reset" id="filters-reset" type="button">Сбросить</button>
-                            <button class="filters-close" type="button" aria-label="Закрыть фильтры">×</button>
-                        </div>
-                    </div>
-
-                    <div class="filters-body">
-                        <fieldset class="filter-group">
-                            <legend>Тип материала</legend>
-                            <div class="filter-list">
-                                <label class="check">
-                                    <input type="checkbox" data-filter="type" value="lesson">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">Уроки</span>
-                                    <span class="check-count" data-count-type="lesson">5</span>
-                                </label>
-                                <label class="check">
-                                    <input type="checkbox" data-filter="type" value="worksheet">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">Рабочие листы</span>
-                                    <span class="check-count" data-count-type="worksheet">5</span>
-                                </label>
-                                <label class="check">
-                                    <input type="checkbox" data-filter="type" value="presentation">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">Презентации</span>
-                                    <span class="check-count" data-count-type="presentation">4</span>
-                                </label>
-                                <label class="check">
-                                    <input type="checkbox" data-filter="type" value="game">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">Игры</span>
-                                    <span class="check-count" data-count-type="game">4</span>
-                                </label>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="filter-group">
-                            <legend>Класс</legend>
-                            <div class="filter-list">
-                                <label class="check">
-                                    <input type="checkbox" data-filter="grade" value="preschool">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">Дошкольникам</span>
-                                    <span class="check-count" data-count-grade="preschool">4</span>
-                                </label>
-                                <label class="check">
-                                    <input type="checkbox" data-filter="grade" value="primary">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">1–4 классы</span>
-                                    <span class="check-count" data-count-grade="primary">5</span>
-                                </label>
-                                <label class="check">
-                                    <input type="checkbox" data-filter="grade" value="middle">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">5–9 классы</span>
-                                    <span class="check-count" data-count-grade="middle">6</span>
-                                </label>
-                                <label class="check">
-                                    <input type="checkbox" data-filter="grade" value="high">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">10–11 классы</span>
-                                    <span class="check-count" data-count-grade="high">3</span>
-                                </label>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="filter-group">
-                            <legend>Тема</legend>
-                            <div class="filter-list filter-scroll">
-                                <label class="check">
-                                    <input type="checkbox" data-filter="topic" value="Литература">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">Литература</span>
-                                    <span class="check-count" data-count-topic="Литература">4</span>
-                                </label>
-                                <label class="check">
-                                    <input type="checkbox" data-filter="topic" value="Лексика">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">Лексика</span>
-                                    <span class="check-count" data-count-topic="Лексика">2</span>
-                                </label>
-                                <label class="check">
-                                    <input type="checkbox" data-filter="topic" value="Грамматика">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">Грамматика</span>
-                                    <span class="check-count" data-count-topic="Грамматика">2</span>
-                                </label>
-                                <label class="check">
-                                    <input type="checkbox" data-filter="topic" value="Письмо">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">Письмо</span>
-                                    <span class="check-count" data-count-topic="Письмо">2</span>
-                                </label>
-                                <label class="check">
-                                    <input type="checkbox" data-filter="topic" value="Чтение">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">Чтение</span>
-                                    <span class="check-count" data-count-topic="Чтение">1</span>
-                                </label>
-                                <label class="check">
-                                    <input type="checkbox" data-filter="topic" value="Фонетика">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">Фонетика</span>
-                                    <span class="check-count" data-count-topic="Фонетика">1</span>
-                                </label>
-                                <label class="check">
-                                    <input type="checkbox" data-filter="topic" value="Фольклор">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">Фольклор</span>
-                                    <span class="check-count" data-count-topic="Фольклор">1</span>
-                                </label>
-                                <label class="check">
-                                    <input type="checkbox" data-filter="topic" value="Развитие речи">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">Развитие речи</span>
-                                    <span class="check-count" data-count-topic="Развитие речи">2</span>
-                                </label>
-                                <label class="check">
-                                    <input type="checkbox" data-filter="topic" value="Игры">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">Игры</span>
-                                    <span class="check-count" data-count-topic="Игры">1</span>
-                                </label>
-                                <label class="check">
-                                    <input type="checkbox" data-filter="topic" value="Традиции">
-                                    <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-                                    <span class="check-text">Традиции</span>
-                                    <span class="check-count" data-count-topic="Традиции">2</span>
-                                </label>
-                            </div>
-                        </fieldset>
-
-                        <div class="filter-group">
-                            <label class="switch">
-                                <input type="checkbox" id="verified-filter">
-                                <span class="switch-text">Только проверенные</span>
-                                <span class="switch-track" aria-hidden="true"></span>
-                            </label>
-                            <label class="switch">
-                                <input type="checkbox" id="saved-filter">
-                                <span class="switch-text">Моя подборка</span>
-                                <span class="switch-track" aria-hidden="true"></span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="filters-foot">
-                        <button class="btn btn-primary" id="filters-apply" type="button">Показать материалы</button>
-                    </div>
-                </aside>
-
-                <div class="catalog-main">
-                    <div class="results-bar" id="results">
-                        <div>
-                            <p class="results-count" id="results-count" role="status" aria-live="polite">Найдено <strong>18</strong> материалов</p>
-                            <p class="results-sub" id="results-sub">из 18 в библиотеке · страница 1 из 3</p>
-                        </div>
-                        <div class="results-tools">
-                            <button class="btn btn-outline filter-trigger" id="filter-trigger" type="button" aria-expanded="false" aria-controls="catalog-filters">
-                                <svg class="icon" aria-hidden="true"><use href="#i-filter" /></svg>
-                                Фильтры
-                                <span class="filter-badge" id="filter-badge" data-count="0">0</span>
-                            </button>
-                            <label class="sort-control">
-                                <span class="sr-only">Сортировка материалов</span>
-                                <select id="catalog-sort">
-                                    <option value="popular">Сначала популярные</option>
-                                    <option value="new">Сначала новые</option>
-                                    <option value="rating">По рейтингу</option>
-                                    <option value="title">По названию</option>
-                                </select>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="active-filters" id="active-filters" hidden></div>
-
-                    <div class="materials catalog-grid" id="catalog-grid"></div>
-
-                    <noscript>
-                        <p class="catalog-empty">Для работы фильтров и каталога включите JavaScript в браузере.</p>
-                    </noscript>
-
-                    <div class="empty-state catalog-empty" id="catalog-empty" hidden>
-                        <span class="empty-icon"><svg class="icon" aria-hidden="true"><use href="#i-search" /></svg></span>
-                        <h3>Ничего не нашлось</h3>
-                        <p>Попробуйте другую тему, класс или тип материала.</p>
-                        <button class="btn btn-outline" type="button" id="catalog-empty-reset">Сбросить фильтры</button>
-                    </div>
-
-                    <nav class="pagination" id="catalog-pagination" aria-label="Страницы каталога" hidden></nav>
-
-                    <div class="catalog-cta">
-                        <div>
-                            <h2>Не нашли нужный материал?</h2>
-                            <p>Опубликуйте свою разработку — рецензент поможет с оформлением, а коллеги найдут её в каталоге.</p>
-                        </div>
-                        <a class="btn btn-cream" href="profile.html#uploads">
-                            Загрузить материал
-                            <svg class="icon" aria-hidden="true"><use href="#i-upload" /></svg>
-                        </a>
-                    </div>
+                <div class="filters-head-actions">
+                    <button class="filters-reset" id="filters-reset" type="button">Сбросить</button>
+                    <button class="filters-close" type="button" aria-label="Закрыть фильтры">×</button>
                 </div>
             </div>
 
-            <div class="filter-backdrop" aria-hidden="true"></div>
-        </section>
-    </main>
+            <div class="filters-body">
+                <fieldset class="filter-group">
+                    <legend>Тип материала</legend>
+                    <div class="filter-list">
+                        <label class="check">
+                            <input type="checkbox" data-filter="type" value="lesson">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">Уроки</span>
+                            <span class="check-count" data-count-type="lesson">5</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" data-filter="type" value="worksheet">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">Рабочие листы</span>
+                            <span class="check-count" data-count-type="worksheet">5</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" data-filter="type" value="presentation">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">Презентации</span>
+                            <span class="check-count" data-count-type="presentation">4</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" data-filter="type" value="game">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">Игры</span>
+                            <span class="check-count" data-count-type="game">4</span>
+                        </label>
+                    </div>
+                </fieldset>
 
-    <footer class="site-footer">
-        <div class="shell footer-grid">
-            <div class="footer-brand">
-                <a class="brand brand--light" href="index.html">
-                    <span class="brand-mark" aria-hidden="true">
-                        <svg viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="#d9d4c8" /><path d="M20 8 32 20 20 32 8 20Z" fill="none" stroke="#792e29" stroke-width="1.4" /><path d="M20 14 26 20 20 26 14 20Z" fill="#792e29" /></svg>
-                    </span>
-                    <span class="brand-text"><strong>DzyrdLab</strong><small>методическая библиотека</small></span>
+                <fieldset class="filter-group">
+                    <legend>Класс</legend>
+                    <div class="filter-list">
+                        <label class="check">
+                            <input type="checkbox" data-filter="grade" value="preschool">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">Дошкольникам</span>
+                            <span class="check-count" data-count-grade="preschool">4</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" data-filter="grade" value="primary">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">1–4 классы</span>
+                            <span class="check-count" data-count-grade="primary">5</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" data-filter="grade" value="middle">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">5–9 классы</span>
+                            <span class="check-count" data-count-grade="middle">6</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" data-filter="grade" value="high">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">10–11 классы</span>
+                            <span class="check-count" data-count-grade="high">3</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="filter-group">
+                    <legend>Тема</legend>
+                    <div class="filter-list filter-scroll">
+                        <label class="check">
+                            <input type="checkbox" data-filter="topic" value="Литература">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">Литература</span>
+                            <span class="check-count" data-count-topic="Литература">4</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" data-filter="topic" value="Лексика">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">Лексика</span>
+                            <span class="check-count" data-count-topic="Лексика">2</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" data-filter="topic" value="Грамматика">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">Грамматика</span>
+                            <span class="check-count" data-count-topic="Грамматика">2</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" data-filter="topic" value="Письмо">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">Письмо</span>
+                            <span class="check-count" data-count-topic="Письмо">2</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" data-filter="topic" value="Чтение">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">Чтение</span>
+                            <span class="check-count" data-count-topic="Чтение">1</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" data-filter="topic" value="Фонетика">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">Фонетика</span>
+                            <span class="check-count" data-count-topic="Фонетика">1</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" data-filter="topic" value="Фольклор">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">Фольклор</span>
+                            <span class="check-count" data-count-topic="Фольклор">1</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" data-filter="topic" value="Развитие речи">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">Развитие речи</span>
+                            <span class="check-count" data-count-topic="Развитие речи">2</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" data-filter="topic" value="Игры">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">Игры</span>
+                            <span class="check-count" data-count-topic="Игры">1</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" data-filter="topic" value="Традиции">
+                            <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span class="check-text">Традиции</span>
+                            <span class="check-count" data-count-topic="Традиции">2</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="filter-group">
+                    <label class="switch">
+                        <input type="checkbox" id="verified-filter">
+                        <span class="switch-text">Только проверенные</span>
+                        <span class="switch-track" aria-hidden="true"></span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" id="saved-filter">
+                        <span class="switch-text">Моя подборка</span>
+                        <span class="switch-track" aria-hidden="true"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="filters-foot">
+                <button class="btn btn-primary" id="filters-apply" type="button">Показать материалы</button>
+            </div>
+        </aside>
+
+        <div class="catalog-main">
+            <div class="results-bar" id="results">
+                <div>
+                    <p class="results-count" id="results-count" role="status" aria-live="polite">Найдено <strong>18</strong> материалов</p>
+                    <p class="results-sub" id="results-sub">из 18 в библиотеке · страница 1 из 3</p>
+                </div>
+                <div class="results-tools">
+                    <button class="btn btn-outline filter-trigger" id="filter-trigger" type="button" aria-expanded="false" aria-controls="catalog-filters">
+                        <svg class="icon" aria-hidden="true"><use href="#i-filter" /></svg>
+                        Фильтры
+                        <span class="filter-badge" id="filter-badge" data-count="0">0</span>
+                    </button>
+                    <label class="sort-control">
+                        <span class="sr-only">Сортировка материалов</span>
+                        <select id="catalog-sort">
+                            <option value="popular">Сначала популярные</option>
+                            <option value="new">Сначала новые</option>
+                            <option value="rating">По рейтингу</option>
+                            <option value="title">По названию</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+            <div class="active-filters" id="active-filters" hidden></div>
+
+            <div class="materials catalog-grid" id="catalog-grid"></div>
+
+            <noscript>
+                <p class="catalog-empty">Для работы фильтров и каталога включите JavaScript в браузере.</p>
+            </noscript>
+
+            <div class="empty-state catalog-empty" id="catalog-empty" hidden>
+                <span class="empty-icon"><svg class="icon" aria-hidden="true"><use href="#i-search" /></svg></span>
+                <h3>Ничего не нашлось</h3>
+                <p>Попробуйте другую тему, класс или тип материала.</p>
+                <button class="btn btn-outline" type="button" id="catalog-empty-reset">Сбросить фильтры</button>
+            </div>
+
+            <nav class="pagination" id="catalog-pagination" aria-label="Страницы каталога" hidden></nav>
+
+            <div class="catalog-cta">
+                <div>
+                    <h2>Не нашли нужный материал?</h2>
+                    <p>Опубликуйте свою разработку — рецензент поможет с оформлением, а коллеги найдут её в каталоге.</p>
+                </div>
+                <a class="btn btn-cream" href="#" data-demo="Публикация материала появится в следующей версии прототипа.">
+                    Загрузить материал
+                    <svg class="icon" aria-hidden="true"><use href="#i-upload" /></svg>
                 </a>
-                <p>Портал методических материалов по осетинскому языку для учителей, воспитателей и родителей.</p>
-                <span class="footer-lang" lang="os">Ирон æвзаг · осетинский язык</span>
-            </div>
-
-            <div class="footer-col">
-                <h3>Библиотека</h3>
-                <a href="catalog.html">Все материалы</a>
-                <a href="catalog.html?type=worksheet">Рабочие листы</a>
-                <a href="catalog.html?type=presentation">Презентации</a>
-                <a href="catalog.html?type=game">Игры</a>
-                <a href="catalog.html#materials">Все классы</a>
-            </div>
-
-            <div class="footer-col">
-                <h3>Сообщество</h3>
-                <a href="index.html#authors">Авторы</a>
-                <a href="index.html#about">Рецензенты</a>
-                <a href="profile.html#uploads">Стать автором</a>
-                <a href="index.html#topics">Темы</a>
-                <a href="#" data-demo="Раздел помощи появится в следующей версии прототипа.">Помощь</a>
-            </div>
-
-            <div class="footer-col">
-                <h3>Проект</h3>
-                <a href="index.html#about">О портале</a>
-                <a href="#" data-demo="Контакты появятся в следующей версии прототипа.">Контакты</a>
-                <a href="#" data-demo="Политика конфиденциальности появится в следующей версии прототипа.">Политика</a>
-                <a href="#" data-demo="Условия использования появятся в следующей версии прототипа.">Лицензия</a>
             </div>
         </div>
-
-        <div class="footer-bottom-wrap">
-            <div class="shell footer-bottom">
-                <span>© 2026 DzyrdLab</span>
-                <span class="footer-motto">Сделано с уважением к осетинскому языку</span>
-                <div class="socials">
-                    <a href="#" data-demo="Сообщество ВКонтакте появится позже.">ВКонтакте <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg></a>
-                    <a href="#" data-demo="Телеграм-канал появится позже.">Telegram <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-watermark" aria-hidden="true"></div>
-    </footer>
-
-    <div class="toast" id="toast" role="status" aria-live="polite">
-        <span class="toast-icon"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
-        <span id="toast-message"></span>
     </div>
 
-    <script src="materials.js"></script>
-    <script src="pages.js"></script>
-</body>
-</html>
+    <div class="filter-backdrop" aria-hidden="true"></div>
+</section>
 
+@section Scripts {
+    <script src="~/js/materials.js" asp-append-version="true"></script>
+    <script src="~/js/pages.js" asp-append-version="true"></script>
+}
