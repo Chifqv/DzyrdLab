@@ -2,7 +2,512 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<body>
+    
+
+    <main id="main">
+        <section class="hero" id="top">
+            <div class="shell hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Методическая библиотека · <span lang="os">Ирон æвзаг</span></p>
+                    <h1>Уроки осетинского <span class="accent">начинаются здесь</span>.</h1>
+                    <p class="hero-lead">Разработки, рабочие листы и игры от практикующих педагогов — для учителей, воспитателей и родителей. Найдите материал по теме и классу, скачайте и обсудите с коллегами.</p>
+
+                    <form class="search" id="hero-search" role="search" novalidate>
+                        <svg class="icon search-icon" aria-hidden="true"><use href="#i-search" /></svg>
+                        <label class="sr-only" for="search-input">Поиск по материалам</label>
+                        <input id="search-input" name="q" type="search" placeholder="Тема, класс или автор…" autocomplete="off">
+                        <button class="btn btn-search" type="submit" >Найти</button>
+                    </form>
+
+                    <div class="quick-filters" aria-label="Быстрый подбор материалов">
+                        <span class="quick-label">Часто ищут:</span>
+                        <button class="chip" type="button" data-catalog-query="Нартский эпос">Нартский эпос</button>
+                        <button class="chip" type="button" data-catalog-type="worksheet">Рабочие листы</button>
+                        <button class="chip" type="button" data-catalog-grade="preschool">Дошкольникам</button>
+                        <button class="chip" type="button" data-catalog-type="game">Игры</button>
+                    </div>
+
+                    <dl class="hero-stats">
+                        <div class="stat"><dt>материалов</dt><dd>2 480</dd></div>
+                        <div class="stat"><dt>авторов</dt><dd>640</dd></div>
+                        <div class="stat"><dt>скачиваний</dt><dd>19 400</dd></div>
+                    </dl>
+                </div>
+
+                <div class="hero-art" aria-hidden="true">
+                    <div class="art-stage">
+                        <div class="art-arch">
+                            <span class="art-arch-glyph">Æ</span>
+                            <span class="art-arch-word" lang="os">iron ævzag</span>
+                        </div>
+                        <div class="paper paper-back"></div>
+                        <div class="paper paper-main">
+                            <div class="paper-head">
+                                <span class="paper-kicker">Методическая разработка</span>
+                                <span class="paper-badge">8 класс</span>
+                            </div>
+                            <div class="paper-title">Нартский эпос:<br>герои и смыслы</div>
+                            <div class="paper-cover">
+                                <span class="paper-cover-glyph">Æ</span>
+                                <span class="paper-cover-caption">Литература · 45 минут</span>
+                            </div>
+                            <div class="paper-lines"><i></i><i></i><i></i></div>
+                            <div class="paper-list">
+                                <span><i class="paper-check"></i> Конспект урока</span>
+                                <span><i class="paper-check"></i> Презентация · 12 слайдов</span>
+                            </div>
+                            <div class="paper-foot"><span>DzyrdLab</span><span>24 страницы</span></div>
+                        </div>
+                        <div class="float-verified">
+                            <span class="float-icon"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span>
+                            <span><strong>Проверено рецензентом</strong><small>методист · кандидат наук</small></span>
+                        </div>
+                        <div class="float-stat">
+                            <span class="float-icon float-icon--wine"><svg class="icon" aria-hidden="true"><use href="#i-download" /></svg></span>
+                            <span><strong>1 248</strong><small>скачиваний за неделю</small></span>
+                            <span class="mini-bars"><i></i><i></i><i></i><i></i><i></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shell trust-bar">
+                <span class="trust-item"><svg class="icon" aria-hidden="true"><use href="#i-shield" /></svg> Каждый материал проверяет рецензент</span>
+                <span class="trust-item"><svg class="icon" aria-hidden="true"><use href="#i-download" /></svg> Скачивание без регистрации</span>
+                <span class="trust-item"><svg class="icon" aria-hidden="true"><use href="#i-scale" /></svg> Права остаются у автора</span>
+            </div>
+        </section>
+
+        <section class="section section--classes" id="classes">
+            <div class="shell">
+                <div class="section-head" data-reveal>
+                    <div>
+                        <p class="eyebrow"><span class="eyebrow-index">01</span> Навигация</p>
+                        <h2>Начните с класса</h2>
+                    </div>
+                    <a class="link-arrow" href="\Home\Catalog">Вся библиотека <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                </div>
+
+                <div class="class-grid">
+                    <a class="class-card" href="\Home\Catalog\?grade=preschool" data-reveal>
+                        <span class="class-icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkles" /></svg></span>
+                        <span class="class-num">01</span>
+                        <h3>Дошкольникам</h3>
+                        <p>Игры, карточки и занятия для самых маленьких</p>
+                        <span class="class-foot">184 материала <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg></span>
+                    </a>
+                    <a class="class-card" href="\Home\Catalog\?grade=primary" data-reveal>
+                        <span class="class-icon"><svg class="icon" aria-hidden="true"><use href="#i-pencil" /></svg></span>
+                        <span class="class-num">02</span>
+                        <h3>1–4 классы</h3>
+                        <p>Первые слова, письмо и любовь к языку</p>
+                        <span class="class-foot">612 материалов <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg></span>
+                    </a>
+                    <a class="class-card" href="\Home\Catalog\?grade=middle" data-reveal>
+                        <span class="class-icon"><svg class="icon" aria-hidden="true"><use href="#i-book" /></svg></span>
+                        <span class="class-num">03</span>
+                        <h3>5–9 классы</h3>
+                        <p>Грамматика, тексты и живой разговор</p>
+                        <span class="class-foot">894 материала <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg></span>
+                    </a>
+                    <a class="class-card" href="catalog.html?grade=high" data-reveal>
+                        <span class="class-icon"><svg class="icon" aria-hidden="true"><use href="#i-cap" /></svg></span>
+                        <span class="class-num">04</span>
+                        <h3>10–11 классы</h3>
+                        <p>Литература, анализ и подготовка к экзаменам</p>
+                        <span class="class-foot">438 материалов <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--library" id="library">
+            <div class="shell">
+                <div class="section-head" data-reveal>
+                    <div>
+                        <p class="eyebrow"><span class="eyebrow-index">02</span> Библиотека</p>
+                        <h2>Избранное за эту неделю</h2>
+                        <p class="section-lead">Свежая подборка материалов, которые уже используют в школах и детских садах.</p>
+                    </div>
+                    <a class="link-arrow" href="catalog.html">Все материалы <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                </div>
+
+                <div class="library-toolbar">
+                    <div class="tabs" role="group" aria-label="Фильтр по типу материала">
+                        <button class="tab is-active" type="button" aria-pressed="true" data-cat="all">Все</button>
+                        <button class="tab" type="button" aria-pressed="false" data-cat="lesson">Уроки</button>
+                        <button class="tab" type="button" aria-pressed="false" data-cat="worksheet">Рабочие листы</button>
+                        <button class="tab" type="button" aria-pressed="false" data-cat="presentation">Презентации</button>
+                        <button class="tab" type="button" aria-pressed="false" data-cat="game">Игры</button>
+                    </div>
+                    <p class="filter-note" id="filter-note" aria-live="polite" hidden></p>
+                </div>
+
+                <div class="materials" id="material-grid">
+                    <article class="material" data-cat="lesson" data-grade="middle" data-keywords="нартский эпос литература 8 класс герои смыслы конспект урок традиции фольклор" data-reveal>
+                        <div class="material-top">
+                            <a class="cover cover--wine" href="#" data-demo="Страница материала появится в следующей версии прототипа.">
+                                <span class="cover-top"><span class="cover-type">Литература · 8 класс</span><span class="cover-num">01</span></span>
+                                <span class="cover-glyph">Æ</span>
+                                <span class="cover-title">Нартский эпос:<br>герои и смыслы</span>
+                                <span class="sr-only">Открыть материал</span>
+                            </a>
+                            <button class="save" type="button" aria-label="Сохранить материал «Нартский эпос»" aria-pressed="false" data-save>
+                                <svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg>
+                            </button>
+                        </div>
+                        <div class="material-body">
+                            <div class="tags"><span class="tag tag--wine">Урок</span><span class="tag">8 класс</span></div>
+                            <h3><a href="#" data-demo="Страница материала появится в следующей версии прототипа.">Нартский эпос: герои и смыслы</a></h3>
+                            <p class="material-desc">Как говорить с подростками о героях нартов: конспект, вопросы для дискуссии и творческое задание.</p>
+                            <div class="author-row">
+                                <span class="avatar avatar--wine">АД</span>
+                                <span class="author-name">Агунда Дзагоева<small>учитель осетинского языка</small></span>
+                            </div>
+                            <div class="meta">
+                                <span class="rating"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star" /></svg> 4.9 <i>(32)</i></span>
+                                <span class="meta-sep" aria-hidden="true"></span>
+                                <span>1 248 скачиваний</span>
+                                <span class="meta-right">24 стр.</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="material" data-cat="worksheet" data-grade="primary" data-keywords="ӕ буква алфавит письмо чтение 2 класс рабочий лист рабочие листы письменность фонетика диагностика" data-reveal>
+                        <div class="material-top">
+                            <a class="cover cover--cream" href="#" data-demo="Страница материала появится в следующей версии прототипа.">
+                                <span class="cover-top"><span class="cover-type">Письмо · 2 класс</span><span class="cover-num">02</span></span>
+                                <span class="cover-glyph">Ӕ</span>
+                                <span class="cover-title">Ӕ, ӕ: учимся<br>читать и писать</span>
+                                <span class="sr-only">Открыть материал</span>
+                            </a>
+                            <button class="save" type="button" aria-label="Сохранить материал «Ӕ, ӕ: учимся читать и писать»" aria-pressed="false" data-save>
+                                <svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg>
+                            </button>
+                        </div>
+                        <div class="material-body">
+                            <div class="tags"><span class="tag tag--wine">Рабочий лист</span><span class="tag">2 класс</span></div>
+                            <h3><a href="#" data-demo="Страница материала появится в следующей версии прототипа.">Ӕ, ӕ: учимся читать и писать</a></h3>
+                            <p class="material-desc">8 заданий на узнавание, письмо и чтение главной буквы осетинского алфавита.</p>
+                            <div class="author-row">
+                                <span class="avatar avatar--olive">ЗК</span>
+                                <span class="author-name">Зарина Кокаева<small>учитель начальных классов</small></span>
+                            </div>
+                            <div class="meta">
+                                <span class="rating"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star" /></svg> 4.8 <i>(57)</i></span>
+                                <span class="meta-sep" aria-hidden="true"></span>
+                                <span>2 106 скачиваний</span>
+                                <span class="meta-right">6 стр.</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="material" data-cat="presentation" data-grade="middle" data-keywords="дзырд слово семья лексика 5 класс презентация карточки грамматика" data-reveal>
+                        <div class="material-top">
+                            <a class="cover cover--olive" href="#" data-demo="Страница материала появится в следующей версии прототипа.">
+                                <span class="cover-top"><span class="cover-type">Лексика · 5 класс</span><span class="cover-num">03</span></span>
+                                <span class="cover-glyph">Д</span>
+                                <span class="cover-title">Дзырд: тема<br>«Семья»</span>
+                                <span class="sr-only">Открыть материал</span>
+                            </a>
+                            <button class="save" type="button" aria-label="Сохранить материал «Дзырд: тема Семья»" aria-pressed="false" data-save>
+                                <svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg>
+                            </button>
+                        </div>
+                        <div class="material-body">
+                            <div class="tags"><span class="tag tag--wine">Презентация</span><span class="tag">5 класс</span></div>
+                            <h3><a href="#" data-demo="Страница материала появится в следующей версии прототипа.">Дзырд: тема «Семья» в карточках</a></h3>
+                            <p class="material-desc">18 слайдов с лексикой, произношением и короткими диалогами для первого урока по теме.</p>
+                            <div class="author-row">
+                                <span class="avatar avatar--sand">ФП</span>
+                                <span class="author-name">Фатима Плиева<small>преподаватель, Владикавказ</small></span>
+                            </div>
+                            <div class="meta">
+                                <span class="rating"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star" /></svg> 4.7 <i>(19)</i></span>
+                                <span class="meta-sep" aria-hidden="true"></span>
+                                <span>864 скачивания</span>
+                                <span class="meta-right">18 слайдов</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="material" data-cat="game" data-grade="preschool" data-keywords="кто я игра дошкольники малыши карточки устная речь игры традиции" data-reveal>
+                        <div class="material-top">
+                            <a class="cover cover--ink" href="#" data-demo="Страница материала появится в следующей версии прототипа.">
+                                <span class="cover-top"><span class="cover-type">Игра · дошкольникам</span><span class="cover-num">04</span></span>
+                                <span class="cover-glyph">?</span>
+                                <span class="cover-title">Кто я?<br>Игры для малышей</span>
+                                <span class="sr-only">Открыть материал</span>
+                            </a>
+                            <button class="save" type="button" aria-label="Сохранить материал «Кто я? Игры для малышей»" aria-pressed="false" data-save>
+                                <svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg>
+                            </button>
+                        </div>
+                        <div class="material-body">
+                            <div class="tags"><span class="tag tag--wine">Игра</span><span class="tag">Дошкольникам</span></div>
+                            <h3><a href="#" data-demo="Страница материала появится в следующей версии прототипа.">Кто я? Игры на осетинском для малышей</a></h3>
+                            <p class="material-desc">12 карточек для подвижных занятий: учим названия животных и первые фразы без зубрёжки.</p>
+                            <div class="author-row">
+                                <span class="avatar avatar--wine">МБ</span>
+                                <span class="author-name">Мадина Бзарова<small>воспитатель детского сада</small></span>
+                            </div>
+                            <div class="meta">
+                                <span class="rating"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star" /></svg> 5.0 <i>(41)</i></span>
+                                <span class="meta-sep" aria-hidden="true"></span>
+                                <span>1 530 скачиваний</span>
+                                <span class="meta-right">12 карточек</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="material" data-cat="lesson" data-grade="high" data-keywords="хетагуров поэзия перевод литература 10 11 класс конспект грамматика" data-reveal>
+                        <div class="material-top">
+                            <a class="cover cover--sand" href="#" data-demo="Страница материала появится в следующей версии прототипа.">
+                                <span class="cover-top"><span class="cover-type">Литература · 10–11</span><span class="cover-num">05</span></span>
+                                <span class="cover-glyph">Х</span>
+                                <span class="cover-title">Хетагуров:<br>поэзия и перевод</span>
+                                <span class="sr-only">Открыть материал</span>
+                            </a>
+                            <button class="save" type="button" aria-label="Сохранить материал «Хетагуров: поэзия и перевод»" aria-pressed="false" data-save>
+                                <svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg>
+                            </button>
+                        </div>
+                        <div class="material-body">
+                            <div class="tags"><span class="tag tag--wine">Конспект</span><span class="tag">10–11 класс</span></div>
+                            <h3><a href="#" data-demo="Страница материала появится в следующей версии прототипа.">Хетагуров: поэзия и перевод</a></h3>
+                            <p class="material-desc">Сравнительный анализ стихотворений и задания на художественный перевод с осетинского.</p>
+                            <div class="author-row">
+                                <span class="avatar avatar--olive">АГ</span>
+                                <span class="author-name">Аслан Гаглоев<small>учитель литературы, школа № 27</small></span>
+                            </div>
+                            <div class="meta">
+                                <span class="rating"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star" /></svg> 4.9 <i>(23)</i></span>
+                                <span class="meta-sep" aria-hidden="true"></span>
+                                <span>742 скачивания</span>
+                                <span class="meta-right">15 стр.</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="material" data-cat="worksheet" data-grade="primary" data-keywords="сказки осетии чтение обсуждение 3 4 класс рабочий лист рабочие листы традиции" data-reveal>
+                        <div class="material-top">
+                            <a class="cover cover--paper" href="#" data-demo="Страница материала появится в следующей версии прототипа.">
+                                <span class="cover-top"><span class="cover-type">Чтение · 3–4 класс</span><span class="cover-num">06</span></span>
+                                <span class="cover-glyph">С</span>
+                                <span class="cover-title">Сказки Осетии:<br>читаем и обсуждаем</span>
+                                <span class="sr-only">Открыть материал</span>
+                            </a>
+                            <button class="save" type="button" aria-label="Сохранить материал «Сказки Осетии»" aria-pressed="false" data-save>
+                                <svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg>
+                            </button>
+                        </div>
+                        <div class="material-body">
+                            <div class="tags"><span class="tag tag--wine">Рабочий лист</span><span class="tag">3–4 класс</span></div>
+                            <h3><a href="#" data-demo="Страница материала появится в следующей версии прототипа.">Сказки Осетии: читаем и обсуждаем</a></h3>
+                            <p class="material-desc">Текст с заданиями до, во время и после чтения, словарик и вопросы для семейного обсуждения.</p>
+                            <div class="author-row">
+                                <span class="avatar avatar--sand">ИТ</span>
+                                <span class="author-name">Ирина Туаева<small>учитель начальных классов</small></span>
+                            </div>
+                            <div class="meta">
+                                <span class="rating"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star" /></svg> 4.8 <i>(28)</i></span>
+                                <span class="meta-sep" aria-hidden="true"></span>
+                                <span>1 012 скачиваний</span>
+                                <span class="meta-right">8 стр.</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="empty-state" id="empty-state" hidden>
+                    <span class="empty-icon"><svg class="icon" aria-hidden="true"><use href="#i-search" /></svg></span>
+                    <h3>Ничего не нашлось</h3>
+                    <p>Попробуйте другую тему, класс или тип материала.</p>
+                    <button class="btn btn-outline" type="button" id="reset-filters">Сбросить фильтры</button>
+                </div>
+
+                <div class="library-more">
+                    <a class="btn btn-outline btn-wide" href="\Home\Catalog">Смотреть все 2 480 материалов <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--review" id="about">
+            <div class="review-ornament" aria-hidden="true">
+                <svg viewBox="0 0 420 420"><path d="M210 20 400 210 210 400 20 210Z" /><path d="M210 90 330 210 210 330 90 210Z" /><path d="M210 160 260 210 210 260 160 210Z" /></svg>
+            </div>
+            <div class="shell review-grid">
+                <div class="review-copy" data-reveal>
+                    <p class="eyebrow eyebrow--light"><span class="eyebrow-index">03</span> Качество</p>
+                    <h2>Не просто файл,<br>а <span class="accent accent--light">проверенный</span> материал.</h2>
+                    <p class="review-lead">Каждую работу перед публикацией читает рецензент: учитель-методист или преподаватель вуза. Мы смотрим на содержание, язык и удобство для урока — а автор получает конкретные рекомендации.</p>
+                    <div class="review-fact">
+                        <span class="review-fact-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg></span>
+                        <span><strong>48 часов</strong><small>средний срок рецензии</small></span>
+                    </div>
+                    <figure class="reviewer-card">
+                        <span class="avatar avatar--sand">ЗК</span>
+                        <div>
+                            <blockquote>«Хороший материал не обязательно сложный. Он должен экономить учителю время и оставлять детям пространство для разговора».</blockquote>
+                            <figcaption>Зарина Кокаева <span>· рецензент, методист</span></figcaption>
+                        </div>
+                    </figure>
+                </div>
+
+                <ol class="steps" data-reveal>
+                    <li>
+                        <span class="step-num">01</span>
+                        <div class="step-body">
+                            <h3>Автор загружает материал</h3>
+                            <p>Конспект, рабочий лист, презентацию или игру. Можно приложить несколько файлов и указать класс.</p>
+                        </div>
+                        <span class="step-icon"><svg class="icon" aria-hidden="true"><use href="#i-upload" /></svg></span>
+                    </li>
+                    <li>
+                        <span class="step-num">02</span>
+                        <div class="step-body">
+                            <h3>Рецензент проверяет</h3>
+                            <p>Методическая ценность, точность осетинского текста, структура и оформление.</p>
+                            <div class="step-chips"><span>Методика</span><span>Язык</span><span>Оформление</span></div>
+                        </div>
+                        <span class="step-icon"><svg class="icon" aria-hidden="true"><use href="#i-eye" /></svg></span>
+                    </li>
+                    <li>
+                        <span class="step-num">03</span>
+                        <div class="step-body">
+                            <h3>Материал получает знак качества</h3>
+                            <p>Публикуем в библиотеке, добавляем в подборки и показываем учителям по всей республике.</p>
+                        </div>
+                        <span class="step-icon step-icon--accent"><svg class="icon" aria-hidden="true"><use href="#i-badge-check" /></svg></span>
+                    </li>
+                </ol>
+            </div>
+            <div class="shell criteria-strip">
+                <span class="criteria-label">Что проверяем</span>
+                <span class="criterion">Методическая ценность</span>
+                <span class="criterion">Точность языка</span>
+                <span class="criterion">Соответствие классу</span>
+                <span class="criterion">Удобство для урока</span>
+                <span class="criterion">Авторские права</span>
+            </div>
+        </section>
+
+        <section class="section section--authors" id="authors">
+            <div class="shell">
+                <div class="section-head" data-reveal>
+                    <div>
+                        <p class="eyebrow"><span class="eyebrow-index">04</span> Авторы</p>
+                        <h2>Люди, которые делятся опытом</h2>
+                        <p class="section-lead">Педагоги из школ, детских садов и вузов Осетии. За каждым материалом — реальная практика.</p>
+                    </div>
+                    <a class="link-arrow" href="profile.html#uploads">Стать автором <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                </div>
+
+                <div class="authors-grid">
+                    <a class="author-card" href="#" data-demo="Профиль автора появится в следующей версии прототипа." data-reveal>
+                        <div class="author-top">
+                            <span class="avatar avatar--lg avatar--wine">АД</span>
+                            <span class="author-badge">Топ автор</span>
+                        </div>
+                        <h3>Агунда Дзагоева</h3>
+                        <p>Учитель осетинского языка и литературы, школа № 27, Владикавказ</p>
+                        <div class="author-tags"><span>Литература</span><span>8–11 классы</span></div>
+                        <div class="author-foot"><span>14 материалов</span><span class="rating"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star" /></svg> 4.9</span></div>
+                    </a>
+
+                    <a class="author-card" href="#" data-demo="Профиль автора появится в следующей версии прототипа." data-reveal>
+                        <div class="author-top">
+                            <span class="avatar avatar--lg avatar--olive">ЗК</span>
+                            <span class="author-badge author-badge--olive">Рецензент</span>
+                        </div>
+                        <h3>Зарина Кокаева</h3>
+                        <p>Методист начального обучения, автор курса «Ирон æвзаг — с первого слова»</p>
+                        <div class="author-tags"><span>Начальная школа</span><span>Письмо</span></div>
+                        <div class="author-foot"><span>23 материала</span><span class="rating"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star" /></svg> 4.8</span></div>
+                    </a>
+
+                    <a class="author-card" href="#" data-demo="Профиль автора появится в следующей версии прототипа." data-reveal>
+                        <div class="author-top">
+                            <span class="avatar avatar--lg avatar--sand">МБ</span>
+                            <span class="author-badge author-badge--sand">Дошкольное</span>
+                        </div>
+                        <h3>Мадина Бзарова</h3>
+                        <p>Воспитатель детского сада № 76, автор игровых занятий на осетинском языке</p>
+                        <div class="author-tags"><span>Игры</span><span>Дошкольникам</span></div>
+                        <div class="author-foot"><span>11 материалов</span><span class="rating"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star" /></svg> 5.0</span></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--topics" id="topics">
+            <div class="shell topics-grid">
+                <div class="topics" data-reveal>
+                    <p class="eyebrow"><span class="eyebrow-index">05</span> Темы</p>
+                    <h2>О чём ищут чаще всего</h2>
+                    <p class="section-lead">Начните с популярной темы — мы подберём материалы для вашего класса.</p>
+                    <div class="tag-cloud">
+                        <button class="tag-pill tag-pill--lg tag-pill--wine" type="button" data-catalog-query="Нартский эпос">Нартский эпос <sup>96</sup></button>
+                        <button class="tag-pill" type="button" data-catalog-topic="Лексика">Лексика <sup>214</sup></button>
+                        <button class="tag-pill" type="button" data-catalog-topic="Грамматика">Грамматика <sup>188</sup></button>
+                        <button class="tag-pill tag-pill--olive" type="button" data-catalog-type="worksheet">Рабочие листы <sup>342</sup></button>
+                        <button class="tag-pill" type="button" data-catalog-topic="Фонетика">Фонетика <sup>74</sup></button>
+                        <button class="tag-pill" type="button" data-catalog-type="game">Игры <sup>129</sup></button>
+                        <button class="tag-pill" type="button" data-catalog-query="Сказки">Сказки <sup>81</sup></button>
+                        <button class="tag-pill tag-pill--lg" type="button" data-catalog-query="Письменность">Письменность <sup>67</sup></button>
+                        <button class="tag-pill" type="button" data-catalog-topic="Традиции">Традиции <sup>58</sup></button>
+                        <button class="tag-pill" type="button" data-catalog-topic="Чтение">Чтение <sup>43</sup></button>
+                    </div>
+                </div>
+
+                <aside class="subscribe" data-reveal>
+                    <span class="subscribe-icon"><svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg></span>
+                    <h3>Новые материалы — раз в неделю</h3>
+                    <p>Подборка свежих разработок и одна идея для урока. По четвергам, без лишних писем.</p>
+                    <form class="subscribe-form" id="subscribe-form" aria-label="Подписка на еженедельную рассылку" novalidate>
+                        <label class="sr-only" for="subscribe-email">Ваша электронная почта</label>
+                        <input id="subscribe-email" type="email" name="email" placeholder="Ваша почта" autocomplete="email" required>
+                        <button type="submit" aria-label="Подписаться на рассылку"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></button>
+                    </form>
+                    <p class="subscribe-note">Без спама. Отписка в один клик.</p>
+                    <p class="subscribe-success" id="subscribe-success" role="status" hidden>Готово! Первое письмо придёт в четверг.</p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="publish-section" id="publish">
+            <div class="shell">
+                <div class="publish-panel" data-reveal>
+                    <div class="publish-ornament" aria-hidden="true">
+                        <svg viewBox="0 0 360 360"><path d="M180 30 330 180 180 330 30 180Z" /><path d="M180 100 260 180 180 260 100 180Z" /><path d="M180 155 205 180 180 205 155 180Z" /></svg>
+                    </div>
+                    <div class="publish-copy">
+                        <p class="eyebrow eyebrow--light"><span class="eyebrow-index">06</span> Для авторов</p>
+                        <h2>Ваш опыт может стать чьим-то <span class="accent accent--light">лучшим уроком</span>.</h2>
+                    </div>
+                    <div class="publish-side">
+                        <p>Загрузите разработку за пять минут. Мы поможем с оформлением, а рецензент подскажет, как сделать материал сильнее.</p>
+                        <div class="publish-actions">
+                            <a class="btn btn-cream" href="#">Загрузить материал <svg class="icon" aria-hidden="true"><use href="#i-upload" /></svg></a>
+                            <a class="btn btn-outline-light" href="#about">Как это работает</a>
+                        </div>
+                        <ul class="publish-notes">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Бесплатно</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Права остаются у вас</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Рецензия за 48 часов</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+</body>
+@section Scripts {
+    <script src="~/js/materials.js" asp-append-version="true"></script>
+    <script src="~/js/pages.js" asp-append-version="true"></script>
+    <script src="~/js/mainscript.js" asp-append-version="true"></script>
+}
+
