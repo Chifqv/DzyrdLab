@@ -1,10 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<body>
-    
-
     <main id="main">
         <section class="hero" id="top">
             <div class="shell hero-grid">
@@ -90,28 +86,28 @@
                 </div>
 
                 <div class="class-grid">
-                    <a class="class-card" href="\Home\Catalog\?grade=preschool" data-reveal>
+                    <a class="class-card" href="\Home\Catalog?grade=preschool" data-reveal>
                         <span class="class-icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkles" /></svg></span>
                         <span class="class-num">01</span>
                         <h3>Дошкольникам</h3>
                         <p>Игры, карточки и занятия для самых маленьких</p>
                         <span class="class-foot">184 материала <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg></span>
                     </a>
-                    <a class="class-card" href="\Home\Catalog\?grade=primary" data-reveal>
+                    <a class="class-card" href="\Home\Catalog?grade=primary" data-reveal>
                         <span class="class-icon"><svg class="icon" aria-hidden="true"><use href="#i-pencil" /></svg></span>
                         <span class="class-num">02</span>
                         <h3>1–4 классы</h3>
                         <p>Первые слова, письмо и любовь к языку</p>
                         <span class="class-foot">612 материалов <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg></span>
                     </a>
-                    <a class="class-card" href="\Home\Catalog\?grade=middle" data-reveal>
+                    <a class="class-card" href="\Home\Catalog?grade=middle" data-reveal>
                         <span class="class-icon"><svg class="icon" aria-hidden="true"><use href="#i-book" /></svg></span>
                         <span class="class-num">03</span>
                         <h3>5–9 классы</h3>
                         <p>Грамматика, тексты и живой разговор</p>
                         <span class="class-foot">894 материала <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg></span>
                     </a>
-                    <a class="class-card" href="catalog.html?grade=high" data-reveal>
+                    <a class="class-card" href="/Home/Catalog?grade=high" data-reveal>
                         <span class="class-icon"><svg class="icon" aria-hidden="true"><use href="#i-cap" /></svg></span>
                         <span class="class-num">04</span>
                         <h3>10–11 классы</h3>
@@ -130,7 +126,7 @@
                         <h2>Избранное за эту неделю</h2>
                         <p class="section-lead">Свежая подборка материалов, которые уже используют в школах и детских садах.</p>
                     </div>
-                    <a class="link-arrow" href="catalog.html">Все материалы <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                    <a class="link-arrow" href="/Home/Catalog">Все материалы <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                 </div>
 
                 <div class="library-toolbar">
@@ -401,7 +397,7 @@
                         <h2>Люди, которые делятся опытом</h2>
                         <p class="section-lead">Педагоги из школ, детских садов и вузов Осетии. За каждым материалом — реальная практика.</p>
                     </div>
-                    <a class="link-arrow" href="profile.html#uploads">Стать автором <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                    <a class="link-arrow" href="#" data-demo="Профиль появится позже.">Стать автором <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                 </div>
 
                 <div class="authors-grid">
@@ -489,7 +485,7 @@
                     <div class="publish-side">
                         <p>Загрузите разработку за пять минут. Мы поможем с оформлением, а рецензент подскажет, как сделать материал сильнее.</p>
                         <div class="publish-actions">
-                            <a class="btn btn-cream" href="#">Загрузить материал <svg class="icon" aria-hidden="true"><use href="#i-upload" /></svg></a>
+                            <a class="btn btn-cream" href="#" data-demo="Профиль появится позже.">Загрузить материал <svg class="icon" aria-hidden="true"><use href="#i-upload" /></svg></a>
                             <a class="btn btn-outline-light" href="#about">Как это работает</a>
                         </div>
                         <ul class="publish-notes">
@@ -503,8 +499,6 @@
         </section>
     </main>
 
-
-</body>
 @section Scripts {
     <script src="~/js/materials.js" asp-append-version="true"></script>
     <script src="~/js/pages.js" asp-append-version="true"></script>

@@ -58,7 +58,7 @@
                 <a href="/#authors">Авторы</a>
                 <a href="/#about">О проекте</a>
                 <div class="nav-extra">
-                    <a href="#" data-auth-link data-demo="Страница входа появится в следующей версии.">Войти</a>
+                    <a asp-controller="Home" asp-action="Login">Войти</a>
                     <a class="btn btn-primary" href="#" data-demo="Публикация материала появится в следующей версии.">Опубликовать материал</a>
                 </div>
             </nav>
@@ -67,7 +67,7 @@
                 <button class="icon-btn" type="button" id="header-search" aria-label="Перейти к поиску">
                     <svg class="icon" aria-hidden="true"><use href="#i-search" /></svg>
                 </button>
-                <a class="btn btn-ghost header-login" href="#" data-auth-link data-demo="Страница входа появится в следующей версии.">Войти</a>
+                <a class="btn btn-ghost header-login" asp-controller="Home" asp-action="Login">Войти</a>
                 <a class="btn btn-primary header-publish" href="#" data-demo="Публикация материала появится в следующей версии.">
                     <span>Опубликовать</span>
                     <svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg>
