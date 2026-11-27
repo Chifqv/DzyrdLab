@@ -1,0 +1,167 @@
+@{
+    ViewData["Title"] = "Вход и регистрация";
+}
+
+<main id="main" class="auth-main">
+    <div class="shell auth-shell">
+      <div class="auth-grid">
+        <div class="auth-form-side">
+          <div class="auth-form-inner">
+            <a class="auth-back" href="index.html">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              На главную
+            </a>
+
+            <p class="auth-kicker">Личный кабинет</p>
+            <h1 id="auth-title">С возвращением</h1>
+            <p class="auth-lead" id="auth-lead">Войдите, чтобы сохранять материалы, следить за рецензиями и публиковать разработки.</p>
+
+            <div class="auth-session" id="auth-session" hidden>
+              <span>Вы вошли как <strong id="auth-session-name"></strong>.</span>
+              <span class="auth-session-actions">
+                <a href="profile.html">Профиль</a>
+                <button type="button" data-auth-logout>Выйти</button>
+              </span>
+            </div>
+
+            <div class="auth-tabs" role="tablist" aria-label="Вход или регистрация">
+              <button class="auth-tab is-active" id="auth-tab-login" type="button" role="tab" aria-selected="true" aria-controls="auth-login-form" data-auth-tab="login">Вход</button>
+              <button class="auth-tab" id="auth-tab-register" type="button" role="tab" aria-selected="false" aria-controls="auth-register-form" data-auth-tab="register" tabindex="-1">Регистрация</button>
+            </div>
+
+            <form class="auth-form" id="auth-login-form" role="tabpanel" aria-labelledby="auth-tab-login" novalidate>
+              <div class="field">
+                <div class="field-label"><label for="login-email">Электронная почта</label></div>
+                <div class="field-input">
+                  <input id="login-email" type="email" name="email" placeholder="name@example.ru" autocomplete="email" aria-describedby="login-email-error">
+                </div>
+                <p class="field-error" id="login-email-error" hidden></p>
+              </div>
+
+              <div class="field">
+                <div class="field-label"><label for="login-password">Пароль</label></div>
+                <div class="field-input password-field">
+                  <input id="login-password" type="password" name="password" placeholder="Введите пароль" autocomplete="current-password" aria-describedby="login-password-error">
+                  <button class="password-toggle" type="button" aria-label="Показать пароль" aria-pressed="false" data-password-toggle>
+                    <svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg>
+                  </button>
+                </div>
+                <p class="field-error" id="login-password-error" hidden></p>
+              </div>
+
+              <div class="auth-options">
+                <label class="check-inline">
+                  <input type="checkbox" id="login-remember" checked>
+                  <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+                  <span>Запомнить меня</span>
+                </label>
+                <a class="field-link" href="#" data-demo="Восстановление пароля появится в следующей версии прототипа.">Забыли пароль?</a>
+              </div>
+
+              <button class="btn btn-primary auth-submit" type="submit">Войти</button>
+
+              <div class="auth-divider">или</div>
+
+              <button class="btn btn-outline auth-demo" id="auth-demo" type="button">
+                <svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg>
+                Войти как демо-автор
+              </button>
+
+              <p class="auth-note">Демо-режим: данные не отправляются на сервер и остаются в браузере.</p>
+              <p class="auth-switch-note">Нет аккаунта? <button type="button" data-auth-mode="register">Создать профиль</button></p>
+            </form>
+
+            <form class="auth-form" id="auth-register-form" role="tabpanel" aria-labelledby="auth-tab-register" hidden novalidate>
+              <div class="field">
+                <div class="field-label"><label for="register-name">Имя и фамилия</label></div>
+                <div class="field-input">
+                  <input id="register-name" type="text" name="name" placeholder="Например, Агунда Дзагоева" autocomplete="name" aria-describedby="register-name-error">
+                </div>
+                <p class="field-error" id="register-name-error" hidden></p>
+              </div>
+
+              <div class="field">
+                <div class="field-label"><label for="register-email">Электронная почта</label></div>
+                <div class="field-input">
+                  <input id="register-email" type="email" name="email" placeholder="name@example.ru" autocomplete="email" aria-describedby="register-email-error">
+                </div>
+                <p class="field-error" id="register-email-error" hidden></p>
+              </div>
+
+              <div class="field">
+                <div class="field-label"><label for="register-password">Пароль</label></div>
+                <div class="field-input password-field">
+                  <input id="register-password" type="password" name="password" placeholder="Минимум 8 символов" autocomplete="new-password" aria-describedby="register-password-hint register-password-error">
+                  <button class="password-toggle" type="button" aria-label="Показать пароль" aria-pressed="false" data-password-toggle>
+                    <svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg>
+                  </button>
+                </div>
+                <p class="field-hint" id="register-password-hint">Используйте буквы и цифры — так надёжнее.</p>
+                <p class="field-error" id="register-password-error" hidden></p>
+              </div>
+
+              <div class="field">
+                <div class="field-label"><label for="register-role">Кто вы</label></div>
+                <div class="field-input">
+                  <select id="register-role" name="role">
+                    <option value="teacher">Учитель осетинского языка</option>
+                    <option value="primary">Учитель начальных классов</option>
+                    <option value="educator">Воспитатель детского сада</option>
+                    <option value="methodist">Методист / рецензент</option>
+                    <option value="parent">Родитель</option>
+                    <option value="student">Студент</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="check-inline">
+                  <input type="checkbox" id="register-consent" aria-describedby="register-consent-error">
+                  <span class="check-box"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+                  <span>Согласен с <a href="#" data-demo="Условия использования появятся в следующей версии прототипа.">условиями</a> и обработкой данных</span>
+                </label>
+                <p class="field-error" id="register-consent-error" hidden></p>
+              </div>
+
+              <button class="btn btn-primary auth-submit" type="submit">Создать профиль</button>
+              <p class="auth-note">Права на ваши материалы остаются у вас. Публикация бесплатна.</p>
+              <p class="auth-switch-note">Уже есть аккаунт? <button type="button" data-auth-mode="login">Войти</button></p>
+            </form>
+          </div>
+        </div>
+
+        <aside class="auth-aside" aria-label="Преимущества личного кабинета">
+          <div class="auth-aside-top">
+            <p class="eyebrow eyebrow--light"><span class="eyebrow-index">01</span> Зачем регистрироваться</p>
+            <h2>Материалы, которые экономят <em>ваше время</em>.</h2>
+            <p class="auth-aside-lead">Один профиль — чтобы возвращаться к сохранённому, следить за публикациями и быть частью сообщества педагогов Осетии.</p>
+
+            <ul class="auth-benefits">
+              <li><span class="auth-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span> Личная подборка материалов всегда под рукой</li>
+              <li><span class="auth-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span> Статусы рецензий и обратная связь от методистов</li>
+              <li><span class="auth-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span> Скачивание без рекламы и обязательных подписок</li>
+            </ul>
+          </div>
+
+          <figure class="auth-quote">
+            <blockquote>«Хороший материал не обязательно сложный. Он должен экономить учителю время и оставлять детям пространство для разговора».</blockquote>
+            <figcaption>
+              <span class="avatar avatar--sand">ЗК</span>
+              Зарина Кокаева · рецензент, методист
+            </figcaption>
+          </figure>
+
+          <div class="auth-aside-stats" aria-label="Библиотека в цифрах">
+            <div class="auth-aside-stat"><strong>2 480</strong><span>материалов</span></div>
+            <div class="auth-aside-stat"><strong>640</strong><span>авторов</span></div>
+            <div class="auth-aside-stat"><strong>19 400</strong><span>скачиваний</span></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+</main>
+
+@section Scripts {
+    <script src="~/js/materials.js" asp-append-version="true"></script>
+    <script src="~/js/pages.js" asp-append-version="true"></script>
+}
